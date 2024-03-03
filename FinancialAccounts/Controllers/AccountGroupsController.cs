@@ -23,7 +23,8 @@ namespace FinancialAccounts.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<AccountGroup>>> GetGroups()
         {
-            return Ok(await _groupService.GetGroupsAsync());
+            var data = await _groupService.GetGroupsAsync();
+            return Ok(data);
         }
 
         [HttpGet("{id}")]
